@@ -1,0 +1,6 @@
+{
+  "name": "Dwell",
+  "description": "Find verified student and fresher roommates by lifestyle, culture, language, and deal-breakers with mutual-consent chat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
