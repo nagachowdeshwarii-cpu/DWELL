@@ -10,6 +10,7 @@ import {
   SocialVibe,
   UserProfile,
 } from '../types/dwell';
+import { FaceVerificationCapture } from './FaceVerificationCapture';
 
 interface QuizViewProps {
   profile: UserProfile;
@@ -424,7 +425,7 @@ export function QuizView({ profile, onSaveQuiz, onCancel }: QuizViewProps) {
                   key: 'quietAfterEleven',
                   label: 'Quiet Hours After 11:00 PM',
                 },
-                { key: 'verifiedOnly', label: 'Verified ID Profiles Only' },
+                { key: 'verifiedOnly', label: 'Face & ID Verified Profiles Only' },
                 { key: 'sameGenderOnly', label: 'Same Gender Roommates Only' },
               ] as {
                 key: keyof UserProfile['dealBreakers'];
@@ -455,6 +456,38 @@ export function QuizView({ profile, onSaveQuiz, onCancel }: QuizViewProps) {
               </label>
             ))}
           </div>
+        </div>
+
+        {/* 05. Face Recognition & Safety Verification */}
+        <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-7 space-y-5">
+          <div>
+            <h2 className="text-lg font-semibold text-[#14191F]">
+              05. Face Recognition & Safety Verification
+            </h2>
+            <p className="text-xs text-[#5A6270] mt-0.5">
+              Prevent fake profiles by verifying a live selfie (and optional
+              photo ID match) while setting up your profile.
+            </p>
+          </div>
+
+          <FaceVerificationCapture
+            existingAvatarUrl={draft.avatarUrl}
+            isFaceVerified={draft.faceVerified}
+            existingConfidence={draft.faceConfidence}
+            existingChecks={draft.verificationChecks}
+            onVerified={({ avatarUrl, confidenceScore, checks }) => {
+              const idPart = checks.idCompared ? ' + Photo ID' : '';
+              setDraft((prev) => ({
+                ...prev,
+                avatarUrl,
+                verified: true,
+                faceVerified: true,
+                faceConfidence: confidenceScore,
+                verificationChecks: checks,
+                verificationMethod: `Face Verified (${confidenceScore}%)${idPart}`,
+              }));
+            }}
+          />
         </div>
 
         {/* Actions */}

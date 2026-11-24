@@ -15,9 +15,20 @@ export interface DealBreakers {
   sameGenderOnly: boolean;
 }
 
+export interface FaceVerificationChecks {
+  singleFaceDetected: boolean;
+  clearUnobstructedFace: boolean;
+  antiSpoofPassed: boolean;
+  idFaceMatch: boolean;
+  idCompared: boolean;
+  captureSource: 'camera' | 'upload';
+  verifiedAt: string;
+}
+
 export interface UserProfile {
   name: string;
   age: number;
+  avatarUrl?: string;
   role: RoleType;
   institution: string;
   targetCity: string;
@@ -35,7 +46,10 @@ export interface UserProfile {
   smoking: SmokingStatus;
   pets: PetStatus;
   verified: boolean;
+  faceVerified?: boolean;
+  faceConfidence?: number;
   verificationMethod?: string;
+  verificationChecks?: FaceVerificationChecks;
   bio: string;
   dealBreakers: DealBreakers;
   quizCompleted: boolean;

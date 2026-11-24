@@ -78,7 +78,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'non-smoker',
     pets: 'no-pets',
     verified: true,
-    verificationDetail: 'Verified via iisc.ac.in + Govt ID',
+    verificationDetail: 'Face Match + iisc.ac.in + Govt ID',
     bio: 'Starting my second semester and looking for a quiet 2BHK near the metro. I cook simple vegetarian meals every evening and keep the kitchen spotless.',
     autoReplyHints: [
       'Hey! Glad we matched—I am looking mostly around Malleshwaram and Indiranagar near the metro.',
@@ -109,7 +109,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'non-smoker',
     pets: 'pet-friendly',
     verified: true,
-    verificationDetail: 'Verified Work Email + Govt ID',
+    verificationDetail: 'Face Match + Work Email + Govt ID',
     bio: 'Fresher moving from Ahmedabad for a design role in Koramangala. Clean kitchen matters to me, and I love hosting an occasional Sunday brunch.',
     autoReplyHints: [
       'Hi! So excited we matched—Koramangala 4th Block or HSR Sector 2 are top of my list right now.',
@@ -140,7 +140,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'non-smoker',
     pets: 'no-pets',
     verified: true,
-    verificationDetail: 'Verified via ucl.ac.uk + Passport Check',
+    verificationDetail: 'Face Match + ucl.ac.uk + Passport',
     bio: 'Architecture postgrad relocating to London. Most days I am in studio until 7 PM, then cook dinner and wind down with a book. Very clean and easygoing.',
     autoReplyHints: [
       'Hello! Nice to connect—I am aiming for a flat within walking distance of Bloomsbury or King’s Cross.',
@@ -171,7 +171,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'non-smoker',
     pets: 'no-pets',
     verified: true,
-    verificationDetail: 'Verified via lse.ac.uk + Govt ID',
+    verificationDetail: 'Face Match + lse.ac.uk + Govt ID',
     bio: 'Moving to London for my master’s term. I wake up at 7 AM, keep common areas organized, and appreciate open communication on chores and groceries.',
     autoReplyHints: [
       'Bonjour! Really glad we both agreed to connect—Angel and Holborn both look great for commuting.',
@@ -202,7 +202,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'outside-only',
     pets: 'has-pet',
     verified: true,
-    verificationDetail: 'Verified Work Email + State ID',
+    verificationDetail: 'Face Match + Work Email + State ID',
     bio: 'New grad starting an analytics role in Midtown. I have a friendly senior cat, stay up late coding or watching football, and enjoy a lively home.',
     autoReplyHints: [
       'Hey! Awesome to connect. I am looking at Astoria and parts of Brooklyn near the subway.',
@@ -233,7 +233,7 @@ export const ROOMMATE_PROFILES: RoommateProfile[] = [
     smoking: 'non-smoker',
     pets: 'no-pets',
     verified: true,
-    verificationDetail: 'Verified Work Email + Employment Pass Check',
+    verificationDetail: 'Face Match + Work Email + Pass Check',
     bio: 'Relocating to Singapore for a graduate analyst role. Looking for a clean, quiet HDB or condo share near Queenstown MRT with zero smoke.',
     autoReplyHints: [
       'Hi there! Great to match—Queenstown and Tiong Bahru are super convenient for the MRT.',

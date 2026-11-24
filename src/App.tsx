@@ -315,7 +315,7 @@ export default function App() {
     { key: 'vegetarianKitchenOnly', label: 'Vegetarian Kitchen Only' },
     { key: 'noPets', label: 'No Pets' },
     { key: 'quietAfterEleven', label: 'Quiet Hours After 11 PM' },
-    { key: 'verifiedOnly', label: 'Verified ID Required' },
+    { key: 'verifiedOnly', label: 'Face & ID Verified Only' },
     { key: 'sameGenderOnly', label: 'Same Gender Only' },
   ];
 
@@ -436,10 +436,10 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-[#14191F]">
-                      Verified Profiles
+                      Face & ID Verified
                     </div>
                     <p className="text-xs text-[#5A6270] mt-1">
-                      University email, fresher offer & photo ID checks
+                      Live face recognition, university email & photo ID checks
                     </p>
                   </div>
                   <div>
@@ -786,14 +786,19 @@ export default function App() {
         isOpen={isProfileModalOpen}
         profile={userProfile}
         onClose={() => setIsProfileModalOpen(false)}
-        onVerify={(method) => {
+        onVerify={(payload) => {
           setUserProfile((prev) => ({
             ...prev,
             verified: true,
-            verificationMethod: method,
+            verificationMethod: payload.verificationMethod,
+            avatarUrl: payload.avatarUrl ?? prev.avatarUrl,
+            faceVerified: payload.faceVerified ?? prev.faceVerified,
+            faceConfidence: payload.faceConfidence ?? prev.faceConfidence,
+            verificationChecks:
+              payload.verificationChecks ?? prev.verificationChecks,
           }));
           setNotice({
-            text: `Your Dwell profile is now verified (${method}).`,
+            text: `Your Dwell profile is now verified (${payload.verificationMethod}).`,
           });
         }}
         onEditQuiz={() => setActiveTab('quiz')}

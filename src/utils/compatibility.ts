@@ -56,7 +56,7 @@ export function evaluateCompatibility(
     violatedRules.push('Quiet Hours After 11 PM');
   }
   if (dealBreakers.verifiedOnly && !candidate.verified) {
-    violatedRules.push('Verified ID Required');
+    violatedRules.push('Face & ID Verified Only');
   }
   if (dealBreakers.sameGenderOnly && candidate.gender !== user.gender) {
     violatedRules.push('Same Gender Preferred');
